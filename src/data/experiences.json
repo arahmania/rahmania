@@ -1,0 +1,66 @@
+[
+  {
+    "position": "Asisten Dosen Lab",
+    "company": "Lab Data Teknologi Informasi",
+    "duration": "Februari 2026",
+    "type": "Freelance",
+    "responsibilities": [
+      "Membantu pelaksanaan tugas administratif kegiatan laboratorium data",
+      "Mendukung proses penyusunan dan pengorganisasian materi presentasi",
+      "Membantu kegiatan dokumentasi serta penyusunan laporan"
+    ],
+    "achievements": []
+  },
+  {
+    "position": "Project Manager & System Analyst",
+    "company": "PT Binary Cipta Solusindo (BINARI)",
+    "duration": "Agustus – November 2025",
+    "type": "Magang",
+    "responsibilities": [
+      "Mengkoordinasikan lintas tim dalam pelaksanaan proyek",
+      "Mengelola administrasi proyek dan menyusun dokumentasi pekerjaan",
+      "Menyusun dan merapikan dokumen pendukung proyek",
+      "Menyusun pengujian Test Case dan Test Skenario",
+      "Memastikan kelancaran komunikasi dan koordinasi tim"
+    ],
+    "achievements": []
+  },
+  {
+    "position": "Web Development",
+    "company": "PT Ginio Digital Karya",
+    "duration": "Februari – Juni 2024",
+    "type": "Magang",
+    "responsibilities": [
+      "Membuat desain UI & UX halaman landing page dan website customer",
+      "Membantu input data pada website InfoEV",
+      "Mengembangkan website menggunakan WordPress custom dan framework Laravel"
+    ],
+    "achievements": []
+  },
+  {
+    "position": "Data Processing & Design",
+    "company": "PT Aptikma Teknologi Indonesia",
+    "duration": "Juni – Agustus 2023",
+    "type": "Magang",
+    "responsibilities": [
+      "Membantu proses pengelolaan data dalam pembuatan chatbot Bina Marga",
+      "Membantu pembuatan desain UI & UX halaman admin ONIC E-Sport",
+      "Membuat desain UI & UX halaman landing page chatbot Bina Marga"
+    ],
+    "achievements": []
+  },
+  {
+  "position": "Tentor",
+  "company": "Prima Juara Bimbingan Belajar",
+  "duration": "Mei – September 2023",
+  "type": "Part Time",
+  "responsibilities": [
+    "Menyampaikan materi pembelajaran sesuai dengan kurikulum yang berlaku",
+    "Memberikan latihan dan tes untuk mengukur pemahaman siswa",
+    "Membimbing siswa dalam memahami materi secara bertahap dan terarah",
+    "Memastikan siswa memahami materi sebelum melanjutkan ke pembahasan berikutnya"
+  ],
+  "achievements": []
+}
+  
+]

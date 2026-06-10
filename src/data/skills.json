@@ -1,0 +1,42 @@
+{
+  "software": [
+    { "name": "Microsoft Office" },
+    { "name": "Canva" },
+    { "name": "Figma" },
+    { "name": "Looker Studio" },
+    { "name": "Android Studio" },
+    { "name": "Trello" },
+    { "name": "Vscode" },
+    { "name": "Git" },
+    { "name": "Navicat" }
+  ],
+  "development": [
+    { "name": "HTML" },
+    { "name": "CSS" },
+    { "name": "JavaScript" },
+    { "name": "PHP" },
+    { "name": "Laravel" },
+    { "name": "WordPress" },
+    { "name": "Next.js" },
+    { "name": "Tailwind CSS" },
+    { "name": "Bootstrap" },
+    { "name": "MySQL" }
+  ],
+  "interpersonal": [
+    { "name": "Komunikasi" },
+    { "name": "Public Speaking" },
+    { "name": "Time Management" },
+    { "name": "Analisis" },
+    { "name": "Teamwork" },
+    { "name": "Problem Solving" },
+    { "name": "Design" }
+  ],
+  "bahasa": [
+    { "name": "UI/UX" },
+    { "name": "Web Development" },
+    { "name": "Manajemen Proyek" },
+    { "name": "System Analyst" },
+    { "name": "Administrasi Data" },
+    { "name": "Data Analyst" }
+  ]
+}

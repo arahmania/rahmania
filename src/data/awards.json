@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Hak Cipta Program Komputer",
+    "year": "2024",
+    "organizer": "Ditjen Hak Kekayaan Intelektual",
+    "description": "Pendaftaran hak cipta program komputer atas karya orisinal.",
+    "link": "#"
+  },
+  {
+    "name": "PPK FEST 2022",
+    "year": "2022",
+    "organizer": "PPK",
+    "description": "Pameran Karya dan Kenduri Kebudayaan — partisipasi dalam pameran karya mahasiswa.",
+    "link": "#"
+  },
+  {
+    "name": "Digitalent VSGA",
+    "year": "2022",
+    "organizer": "Digitalent Kominfo",
+    "description": "Pelatihan Junior Web Developer — mempelajari pengembangan web dasar.",
+    "link": "#"
+  },
+  {
+    "name": "Pelatihan Public Speaking",
+    "year": "2023",
+    "organizer": "Politeknik Negeri Malang",
+    "description": "Pelatihan keterampilan presentasi dan komunikasi publik.",
+    "link": "#"
+  },
+  {
+    "name": "Workshop PKM Prodi Manajemen Informatika",
+    "year": "2022",
+    "organizer": "Prodi Manajemen Informatika",
+    "description": "Workshop Program Kreativitas Mahasiswa — penyusunan proposal PKM.",
+    "link": "#"
+  }
+]

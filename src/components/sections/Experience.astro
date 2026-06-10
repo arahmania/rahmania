@@ -1,0 +1,111 @@
+---
+import experiences from '../../data/experiences.json';
+const all = experiences;
+---
+
+<script>
+  import { initScrollAnimations } from '../../lib/scrollAnimations';
+  initScrollAnimations();
+</script>
+
+<section id="experience" class="py-24 bg-gray-50">
+  <div class="w-full px-5 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 opacity-0-initial" data-animate="section-title">
+        Pengalaman
+      </h2>
+      <div class="w-16 h-0.5 bg-soft-blue mx-auto rounded-full"></div>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <div class="relative w-full px-5 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+      <div id="carousel-track" class="flex gap-6 overflow-hidden">
+        {all.map((exp) => (
+          <div class="w-[calc(50%-12px)] md:w-[calc((100%-48px)/3)] shrink-0 grow-0">
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md hover:border-soft-blue/20 transition-all duration-300 h-full">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-soft-blue shrink-0"></span>
+                <span class="text-xs text-soft-blue font-medium">{exp.type}</span>
+              </div>
+              <h3 class="text-base font-semibold text-gray-800">{exp.position}</h3>
+              <p class="text-xs text-gray-400 mt-0.5">{exp.company} • {exp.duration}</p>
+              <ul class="space-y-1.5 mt-3">
+                {exp.responsibilities.map((r) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-500 leading-relaxed">
+                    <span class="w-1 h-1 rounded-full bg-gray-300 mt-2 shrink-0"></span>
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-navy hover:text-white transition-all duration-300 z-10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-navy hover:text-white transition-all duration-300 z-10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const track = document.getElementById('carousel-track');
+  const prev = document.getElementById('carousel-prev');
+  const next = document.getElementById('carousel-next');
+  if (!track) return;
+
+  const items = Array.from(track.children);
+  const total = items.length;
+  if (total < 2) return;
+
+  let current = 0;
+
+  function getVisibleCount() {
+    if (window.innerWidth < 768) return 2;
+    return 3;
+  }
+
+  function getSlideWidth() {
+    return items[0].getBoundingClientRect().width + 24;
+  }
+
+  function goTo(index) {
+    const slideW = getSlideWidth();
+    const visible = getVisibleCount();
+    const max = Math.max(0, total - visible);
+    if (index < 0) index = max;
+    if (index > max) index = 0;
+    current = index;
+    track.scrollTo({ left: current * slideW, behavior: 'smooth' });
+  }
+
+  function nextSlide() { goTo(current + 1); }
+  function prevSlide() { goTo(current - 1); }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
+  track.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (e.deltaY > 0) nextSlide();
+    else prevSlide();
+  }, { passive: false });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const slideW = getSlideWidth();
+      const max = Math.max(0, total - getVisibleCount());
+      if (current > max) { current = max; }
+      track.scrollTo({ left: current * slideW, behavior: 'instant' });
+    }, 100);
+  });
+})();
+</script>

@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import { getSEO } from '../lib/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  detail?: boolean;
+}
+
+const { title, description, image, detail } = Astro.props;
+const seo = getSEO({ title: title || '', description: description || '', image });
+---
+
+<script>
+  import { initScrollAnimations } from '../lib/scrollAnimations';
+  
+  // Initialize scroll animations when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+  } else {
+    initScrollAnimations();
+  }
+</script>
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{seo.title}</title>
+    {seo.meta.map((m) => (
+      <meta {...m} />
+    ))}
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <Navbar detail={detail} />
+    <slot />
+  </body>
+</html>

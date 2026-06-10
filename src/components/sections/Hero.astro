@@ -1,0 +1,107 @@
+---
+import Button from '../ui/Button.astro';
+import socials from '../../data/socials.json';
+import profileImg from '../../assets/images/ProfileHero.png';
+import { initScrollAnimations } from '../../lib/scrollAnimations';
+---
+
+<script>
+  import { initScrollAnimations } from '../../lib/scrollAnimations';
+  initScrollAnimations();
+</script>
+
+<section class="relative overflow-hidden bg-white min-h-screen flex flex-col justify-center pt-20 md:pt-24 pb-12 md:pb-16">
+  <!-- Background shapes -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-soft-blue/5 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-navy/5 blur-3xl"></div>
+
+    <!-- Floating emoticons background -->
+    <div class="absolute top-16 left-8 text-2xl opacity-20 text-soft-blue animate-float animate-float-delay-1 select-none pointer-events-none">:)</div>
+    <div class="absolute top-1/3 right-16 text-3xl opacity-15 text-soft-blue animate-float-slow animate-float-delay-2 select-none pointer-events-none">✦</div>
+    <div class="absolute top-2/3 left-1/4 text-2xl opacity-18 text-soft-blue animate-float-slower animate-float-delay-3 select-none pointer-events-none">♡</div>
+    <div class="absolute bottom-32 right-1/3 text-xl opacity-15 text-soft-blue animate-float animate-float-delay-4 select-none pointer-events-none">·</div>
+    <div class="absolute bottom-20 left-12 text-2xl opacity-20 text-soft-blue animate-float-slow animate-float-delay-5 select-none pointer-events-none">✧</div>
+    <div class="absolute top-1/2 right-12 text-xl opacity-16 text-soft-blue animate-float-slower animate-float-delay-6 select-none pointer-events-none">⋆</div>
+    <div class="absolute bottom-1/3 right-1/4 text-2xl opacity-15 text-soft-blue animate-float animate-float-delay-7 select-none pointer-events-none">✨</div>
+  </div>
+
+  <div class="w-full px-5 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-center">
+      <!-- Left: Content -->
+      <div class="space-y-7">
+        <!-- Headline -->
+        <div class="space-y-2 animate-fade-up">
+          <p class="text-lg text-gray-400 font-medium tracking-wide">Hello, I'm</p>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-[1.1]">
+            Annisa Rahmania<br/>Putri
+          </h1>
+        </div>
+
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl text-soft-blue font-medium animate-fade-up animate-delay-100">
+          System Analyst | Web Developer | Data Administration
+        </p>
+
+        <!-- Description -->
+        <p class="text-gray-500 text-base leading-relaxed animate-fade-up animate-delay-200">
+          Lulusan D4 Teknik Informatika dengan pengalaman dalam pengelolaan data, administrasi dokumen, dokumentasi proyek, analisis kebutuhan sistem, dan pengembangan website. Memiliki ketelitian dalam mengelola informasi, menyusun laporan, serta mendukung kegiatan operasional maupun pengembangan sistem secara terstruktur.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap gap-4 animate-fade-up animate-delay-300">
+          <Button href="mailto:anisarahmania313@gmail.com" variant="primary">Kirim Email</Button>
+          <Button href="#projects" variant="outline">Lihat Proyek</Button>
+          <a href="/resume.pdf" download class="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-medium transition-all duration-300 text-sm border border-navy/20 text-navy hover:bg-navy hover:text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Social -->
+        <div class="flex gap-3 pt-2">
+          {socials.filter(s => s.name !== 'Email').map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-navy hover:text-white transition-all duration-300"
+              aria-label={social.name}
+            >
+              {social.name === 'LinkedIn' && (
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              )}
+              {social.name === 'Instagram' && (
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Profile Card -->
+      <div class="flex justify-center lg:justify-end animate-fade-left">
+        <div class="relative">
+          <!-- Profile image card -->
+          <div class="w-72 h-80 md:w-80 md:h-96 rounded-3xl bg-gray-50 shadow-lg border border-gray-200 overflow-hidden relative">
+            <img src={profileImg.src} alt="Annisa Rahmania Putri" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -left-6 bg-white rounded-2xl px-5 py-3 shadow-lg border border-gray-100">
+            <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded-full bg-green-400 animate-pulse"></span>
+              <div>
+                <p class="text-sm font-semibold text-gray-800">Open to Work</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

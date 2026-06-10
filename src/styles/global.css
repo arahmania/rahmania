@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1E3A5F;
+  --color-navy-light: #2D5A8E;
+  --color-navy-dark: #152B47;
+  --color-soft-blue: #60A5FA;
+  --color-soft-blue-light: #93C5FD;
+  --color-soft-blue-dark: #3B82F6;
+  --color-light-blue: #DBEAFE;
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
+  --color-gray-200: #E2E8F0;
+  --color-gray-400: #94A3B8;
+  --color-gray-500: #64748B;
+  --color-gray-600: #475569;
+  --color-gray-800: #1E293B;
+
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: #60A5FA;
+  color: white;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateZ(5deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-25px) translateX(10px);
+  }
+}
+
+@keyframes floatSlower {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateX(-12px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animation Utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out forwards;
+  }
+
+  .animate-fade-left {
+    animation: fadeLeft 0.7s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+
+  /* Stagger animations */
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  /* Scroll reveal state */
+  .opacity-0-initial {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .scroll-revealed {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+
+  /* Floating animations */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: floatSlower 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay-1 {
+    animation-delay: 0s;
+  }
+
+  .animate-float-delay-2 {
+    animation-delay: -1s;
+  }
+
+  .animate-float-delay-3 {
+    animation-delay: -2s;
+  }
+
+  .animate-float-delay-4 {
+    animation-delay: -3s;
+  }
+
+  .animate-float-delay-5 {
+    animation-delay: -4s;
+  }
+
+  .animate-float-delay-6 {
+    animation-delay: -4.5s;
+  }
+
+  .animate-float-delay-7 {
+    animation-delay: -5s;
+  }
+
+  /* Custom opacity utilities for emoticons */
+  .opacity-15 {
+    opacity: 0.15;
+  }
+
+  .opacity-16 {
+    opacity: 0.16;
+  }
+
+  .opacity-18 {
+    opacity: 0.18;
+  }
+
+  .opacity-20 {
+    opacity: 0.2;
+  }
+}
+
+
